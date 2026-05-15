@@ -1,0 +1,9 @@
+{
+  "protocol_version": "0.1.0",
+  "message_id": "msg_unsupported_type",
+  "type": "task.created",
+  "created_at": "2026-05-12T12:00:00Z",
+  "event": {
+    "event_name": "comment.created"
+  }
+}

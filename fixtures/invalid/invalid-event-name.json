@@ -1,0 +1,9 @@
+{
+  "protocol_version": "0.1.0",
+  "message_id": "msg_invalid_event_name",
+  "type": "event.created",
+  "created_at": "2026-05-12T12:00:00Z",
+  "event": {
+    "event_name": "Comment Created"
+  }
+}

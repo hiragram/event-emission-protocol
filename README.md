@@ -4,6 +4,8 @@ Event Emission Protocol is a one-way protocol for emitting service-side events t
 
 In version 0.1.0, the only transport defined by this specification is SSE Pull: a service exposes an SSE endpoint, and a client connects as a subscriber.
 
+This repository is the protocol specification repository. It contains the normative specification, JSON Schema, examples, and conformance fixtures. Server-side and client-side SDK implementations should live in separate repositories and consume this repository as their specification source.
+
 ## Goals
 
 - Separate protocol message structure from transport.
@@ -89,6 +91,8 @@ The message body uses a key that corresponds to the message `type`. Version 0.1.
 JSON Schema: [`schema/event-emission-0.1.0.schema.json`](schema/event-emission-0.1.0.schema.json)
 
 Example message: [`examples/comment-created.json`](examples/comment-created.json)
+
+Conformance fixtures: [`fixtures/`](fixtures/)
 
 | Property | Required | Owner | Role | Notes |
 | --- | --- | --- | --- | --- |
