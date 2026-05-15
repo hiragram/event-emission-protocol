@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hiragram.github.io/event-emission-protocol/schema/event-emission-0.1.0.schema.json",
+  "title": "Event Emission Protocol Message",
+  "description": "JSON Schema for Event Emission Protocol 0.1.0 messages.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "protocol_version",
+    "message_id",
+    "type",
+    "created_at",
+    "event"
+  ],
+  "properties": {
+    "protocol_version": {
+      "type": "string",
+      "const": "0.1.0",
+      "description": "Event Emission Protocol version."
+    },
+    "message_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Service-defined unique identifier for this event message."
+    },
+    "type": {
+      "type": "string",
+      "const": "event.created",
+      "description": "Protocol-level message type."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Time when the event message was created."
+    },
+    "event": {
+      "$ref": "#/$defs/event"
+    }
+  },
+  "$defs": {
+    "event": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "event_name"
+      ],
+      "properties": {
+        "event_name": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*(?:\\.[a-z][a-z0-9]*(?:_[a-z0-9]+)*)*$",
+          "description": "Service-defined domain event name, such as comment.created."
+        },
+        "data": {
+          "type": "object",
+          "description": "Service-specific structured data. Client core treats this object as opaque."
+        }
+      }
+    }
+  }
+}

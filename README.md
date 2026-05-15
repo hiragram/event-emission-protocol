@@ -86,6 +86,10 @@ Every protocol message has a common envelope.
 
 The message body uses a key that corresponds to the message `type`. Version 0.1.0 only defines the `event` body.
 
+JSON Schema: [`schema/event-emission-0.1.0.schema.json`](schema/event-emission-0.1.0.schema.json)
+
+Example message: [`examples/comment-created.json`](examples/comment-created.json)
+
 | Property | Required | Owner | Role | Notes |
 | --- | --- | --- | --- | --- |
 | `protocol_version` | yes | Protocol | Identifies the protocol version. | Initial value is `0.1.0`. A client does not process unsupported protocol versions. |
